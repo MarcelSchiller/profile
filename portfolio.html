@@ -1,75 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Coder Profile</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  <style>
-    .profile-image {
-      width: 128px;
-      height: 128px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    .navbar {
-      border-bottom: 1px solid #dbdbdb;
-    }
-    .meme img {
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Commit & Cry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="icon" href="./../img/Herunterladen.jpg" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .profile-image {
+            width: 128px;
+            height: 128px;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+
+        .navbar {
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .meme img {
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .margin-bot {
+            margin-top: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #363636;
+        }
+
+        .box {
+            background-color: #ffffff;
+            color: #363636;
+        }
+
+        .navbar {
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .navbar-item,
+        .title,
+        .subtitle {
+            color: #363636;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .box {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #1e1e1e;
+            border-bottom: 1px solid #333;
+        }
+
+        body.dark-mode .navbar-item,
+        body.dark-mode .title,
+        body.dark-mode .subtitle {
+            color: #f5f5f5 !important;
+        }
+
+        body.dark-mode .button.is-primary {
+            background-color: #333 !important;
+            border-color: #444 !important;
+            color: #f5f5f5 !important;
+        }
+        .navbar a:hover{
+            color: white;
+            background-color: #626262;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+            const profilePic = document.getElementById('profile-pic');
+
+
+            toggleBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+            
+
+            if (body.classList.contains('dark-mode')) {
+                profilePic.src = "./../img/Herunterladen2.png";
+            } else {
+                profilePic.src = "./../img/Herunterladen.jpg";
+            }
+        });
+        });
+    </script>
 </head>
+
 <body>
 
-  <!-- Navbar resembling Twitter -->
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item has-text-weight-bold is-size-4">CoderNet</a>
-    </div>
-
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item is-active">Home</a>
-        <a class="navbar-item">Explore</a>
-        <a class="navbar-item">Notifications</a>
-        <a class="navbar-item">Messages</a>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <button class="button is-primary is-rounded">Button</button>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-weight-bold is-size-4">Espresso Overflow</a>
         </div>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Main content -->
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-
-          <!-- Profile Card -->
-          <div class="box has-text-centered">
-            <figure class="image is-inline-block mb-4">
-              <img class="profile-image" src="./../img/Herunterladen.jpg" alt="Profile Picture">
-            </figure>
-            <h1 class="title is-4">Marcel</h1>
-            <p class="subtitle is-6">Full-stack tinkerer. Frontend wizard. Backend bug hunter. Coffee-powered.</p>
-          </div>
-
-          <!-- Meme of the Week -->
-          <div class="box meme">
-            <h2 class="title is-5">🔥 Coding Meme of the Week</h2>
-            <figure class="image">
-              <img src="./../img/meme-dev-humor-when-you-try-to-solve-a-bug-in-css-261_f3uzja.jpg">
-            </figure>
-          </div>
-
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item" href="#meme">Coding Meme of the week</a>
+                <a class="navbar-item" href="https://github.com/MarcelSchiller">GitHub</a>
+                <a class="navbar-item" href="https://marcel-schiller.developerakademie.net/index.html">El Pollo Loco</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <button id="theme-toggle" class="button is-primary is-rounded">Day/Night</button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+
+                    <div class="box has-text-centered">
+                        <figure class="image is-inline-block mb-4">
+                            <img id="profile-pic" class="profile-image" src="./../img/Herunterladen.jpg"
+                                alt="Profile Picture">
+                        </figure>
+                        <h1 class="title is-4">Marcel</h1>
+                        <p class="subtitle is-6 margin-bot">☕ Fueled by coffee & compiler errors
+                        </p>
+                        <p class="subtitle is-6">🎾 Misses fewer tennis shots than semicolons
+                        </p>
+                        <p class="subtitle is-6">🏎️ Sim racer by night, Java debugger by day</p>
+                    </div>
+
+                    <div id="meme" class="box meme">
+                        <h2 class="title is-5">Coding Meme of the Week</h2>
+                        <figure class="image">
+                            <img src="./../img/meme-dev-humor-when-you-try-to-solve-a-bug-in-css-261_f3uzja.jpg">
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
+
 </html>
